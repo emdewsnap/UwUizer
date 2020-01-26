@@ -1,0 +1,2 @@
+# UwUizer
+UwUizer Discord Bot
