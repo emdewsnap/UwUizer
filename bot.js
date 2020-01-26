@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+require('dotenv').config()
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -29,4 +30,4 @@ client.on('message', msg => {
     }
 });
 
-client.login('NjY5OTk1NTQ4NjQzODE5NTMy.Xin8gQ._1PHC0_QA5rL2QVddjlLG6rFFcs');
+client.login(process.env.TOKEN);
