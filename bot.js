@@ -9,7 +9,7 @@ client.on('ready', () => {
  });
 
 client.on('message', msg => {
-    if (msg.isMentioned(client.user)) {
+    if (msg.isMentioned(client.user) || (Math.floor(Math.random() * 1000) + 1) === 755) {
         msg.channel.fetchMessages({ limit: 2 }).then(messages => {
             let prevMes = messages.last().content;
             let mesAsArr = prevMes.split("");
