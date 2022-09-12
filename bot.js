@@ -31,4 +31,8 @@ client.on('message', msg => {
     }
 });
 
+client.on('error', err => {
+    console.warn(err);
+ });
+
 client.login(process.env.TOKEN);
