@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
- client.user.setGame("Tag me to UwUize!");
+ client.user.setActivity("Tag me to UwUize!");
  });
 
 client.on('message', msg => {
@@ -29,6 +29,10 @@ client.on('message', msg => {
           })
           .catch(console.error);
     }
+});
+
+client.on('shardError', error => {
+	console.error('A websocket connection encountered an error:', error);
 });
 
 client.on('error', err => {
