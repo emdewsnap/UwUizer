@@ -2,16 +2,16 @@ const Discord = require('discord.js');
 const logger = require('./logger'); // import the logger
 require('dotenv').config();
 require('http').createServer().listen(3001);
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: [Discord.IntentsBitField.Flags.DirectMessages, Discord.IntentsBitField.Flags.GuildMessages, Discord.IntentsBitField.Flags.Guilds, Discord.IntentsBitField.Flags.MessageContent] });
 
 client.on('ready', () => {
   logger.info(`Logged in as ${client.user.tag}!`);
   client.user.setActivity("Tag me to UwUize!");
 });
 
-client.on('message', msg => {
-    if (msg.isMentioned(client.user) || (Math.floor(Math.random() * 100) + 1) === 69) {
-        msg.channel.fetchMessages({ limit: 2 }).then(messages => {
+client.on('messageCreate', msg => {
+    if (msg.mentions.has(client.user) || (Math.floor(Math.random() * 100) + 1) === 69) {
+        msg.channel.messages.fetch({ limit: 2 }).then(messages => {
             let prevMes = messages.last().content;
             let mesAsArr = prevMes.split("");
         let newMes = "";
