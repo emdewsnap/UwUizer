@@ -4,12 +4,12 @@
   "description": "uwu bot for discord",
   "main": "bot.js",
   "dependencies": {
-    "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1",
+    "discord.js": "^14.26.3",
+    "dotenv": "^17.4.2",
     "winston": "^3.11.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "devDependencies": {},
   "scripts": {
