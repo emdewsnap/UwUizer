@@ -5,12 +5,13 @@ FROM node:22
 # Create and change to the app directory.
 WORKDIR /usr/src/app
 
-RUN git clone https://github.com/wkhammond/UwUizer.git
+RUN git clone https://github.com/emdewsnap/UwUizer.git
 WORKDIR /usr/src/app/UwUizer
 
 # COPY package*.json ./
 
-RUN pwd && ls && npm install
+RUN apt-get update && apt-get upgrade -y
+RUN pwd && ls && npm install && npm audit fix
 
 # Copy local code to the container image.
 # COPY *.js .
